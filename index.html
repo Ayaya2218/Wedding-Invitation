@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan - Rangga & Andini</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    .font-greatvibes {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Responsive Background Hero */
+    .hero-bg {
+      background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+        url('asset/Gemini_Generated_Image_u68eedu68eedu68e.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+
+    /* Optimasi untuk Mobile */
+    @media (max-width: 768px) {
+      .hero-bg {
+        background-size: cover;
+        background-position: center center;
+        min-height: 100vh;
+      }
+    }
+
+    /* Optimasi untuk Tablet */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hero-bg {
+        background-size: cover;
+        background-position: center center;
+      }
+    }
+
+    /* Optimasi untuk Desktop */
+    @media (min-width: 1025px) {
+      .hero-bg {
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+      }
+    }
+
+    /* Sakura Animation */
+    #sakura-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .sakura {
+      position: absolute;
+      top: -10%;
+      width: 20px;
+      height: 20px;
+      background-image: url("asset/image-removebg-preview\ \(8\).png");
+      background-size: cover;
+      opacity: 0.8;
+      animation: fall 10s linear infinite, sway 6s ease-in-out infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    @keyframes sway {
+      0% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-left: 40px;
+      }
+
+      100% {
+        margin-left: 0;
+      }
+    }
+
+    /* Button Pulse Animation */
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .btn-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-[#faf7f2]">
+
+  <!-- Sakura Effect -->
+  <div id="sakura-container"></div>
+
+  <!-- Hero Section -->
+  <div class="hero-bg min-h-screen flex items-center justify-center relative">
+
+    <div class="text-center text-white px-4 z-10">
+      <!-- Subtitle -->
+      <p
+        class="font-playfair text-sm md:text-base lg:text-lg tracking-widest uppercase mb-4 opacity-90 animate-fade-in">
+        Undangan Pernikahan
+      </p>
+
+      <!-- Couple Names -->
+      <h1 class="font-greatvibes text-5xl md:text-6xl lg:text-7xl mb-4 animate-fade-in-up"
+        style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+        Rangga & Andini
+      </h1>
+
+      <!-- Date -->
+      <p class="font-playfair text-lg md:text-xl lg:text-2xl mb-8 tracking-wide animate-fade-in-up">
+        20 Februari 2026
+      </p>
+
+      <!-- Countdown -->
+      <div class="flex gap-2 md:gap-4 justify-center my-8" data-aos="fade-up" data-aos-duration="1000"
+        data-aos-delay="600">
+        <div class=" shadow-lg p-3 md:p-4 min-w-[65px] md:min-w-[75px] text-center">
+          <span class="block text-2xl md:text-3xl font-bold text-primary" id="days">00</span>
+          <span class="block text-[0.6rem] md:text-xs text-secondary uppercase tracking-wider mt-1">Hari</span>
+        </div>
+        <div class="shadow-lg p-3 md:p-4 min-w-[65px] md:min-w-[75px] text-center">
+          <span class="block text-2xl md:text-3xl font-bold text-primary" id="hours">00</span>
+          <span class="block text-[0.6rem] md:text-xs text-secondary uppercase tracking-wider mt-1">Jam</span>
+        </div>
+        <div class="shadow-lg p-3 md:p-4 min-w-[65px] md:min-w-[75px] text-center">
+          <span class="block text-2xl md:text-3xl font-bold text-primary" id="minutes">00</span>
+          <span class="block text-[0.6rem] md:text-xs text-secondary uppercase tracking-wider mt-1">Menit</span>
+        </div>
+        <div class="shadow-lg p-3 md:p-4 min-w-[65px] md:min-w-[75px] text-center">
+          <span class="block text-2xl md:text-3xl font-bold text-primary" id="seconds">00</span>
+          <span class="block text-[0.6rem] md:text-xs text-secondary uppercase tracking-wider mt-1">Detik</span>
+        </div>
+      </div>
+
+      <!-- Open Invitation Button -->
+      <a href="invitation.html"
+        class="btn-pulse inline-block bg-[#b08968] hover:bg-[#8d6e63] text-white font-playfair font-bold px-8 md:px-12 py-3 md:py-4 rounded-full text-base md:text-lg shadow-lg transition-all duration-300 hover:shadow-xl">
+        Buka Undangan
+      </a>
+    </div>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+
+    // Initialize AOS
+    AOS.init({
+      once: true,
+      duration: 1000
+    });
+    // Countdown Timer
+    const weddingDate = new Date('February 20, 2026 00:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+      }
+    }
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* Sakura Effect */
+    const sakuraContainer = document.getElementById("sakura-container");
+
+    function createSakura() {
+      const sakura = document.createElement("div");
+      sakura.className = "sakura";
+
+      sakura.style.left = Math.random() * window.innerWidth + "px";
+      sakura.style.animationDuration =
+        5 + Math.random() * 5 + "s, " + (3 + Math.random() * 3) + "s";
+      sakura.style.opacity = Math.random() * 0.5 + 0.3;
+
+      sakuraContainer.appendChild(sakura);
+
+      setTimeout(() => {
+        sakura.remove();
+      }, 12000);
+    }
+
+    setInterval(createSakura, 300);
+
+    /* Simple Fade In Animations */
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeInUp {
+        from { 
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to { 
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 1s ease-in;
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+
+</body>
+
+</html>
